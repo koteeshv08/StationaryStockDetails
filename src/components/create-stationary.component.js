@@ -43,7 +43,7 @@ export default class CreateStationary extends Component {
       description: this.state.description
     };
 
-    axios.post('/stationary/create-item', stationaryObject)
+    axios.post('http://localhost:4000/stationary/create-item', stationaryObject)
       .then(res => console.log(res.data));
 
     this.setState({

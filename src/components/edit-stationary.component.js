@@ -56,7 +56,7 @@ export default class EditStationary extends Component {
       description: this.state.description
     };
 
-    axios.put('stationary/update-item/' + this.props.match.params.id, stationaryObject)
+    axios.put('http://localhost:4000/stationary/update-item/' + this.props.match.params.id, stationaryObject)
       .then((res) => {
         console.log(res.data)
         console.log('Item successfully updated')

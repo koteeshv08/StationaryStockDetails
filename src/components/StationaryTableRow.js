@@ -11,7 +11,7 @@ export default class StationaryTableRow extends Component {
     }
 
     deleteStationary() {
-        axios.delete('/stationary/delete-item/' + this.props.obj._id)
+        axios.delete('http://localhost:4000/stationary/delete-item/' + this.props.obj._id)
             .then((res) => {
                 console.log('Item successfully deleted!')
             }).catch((error) => {
