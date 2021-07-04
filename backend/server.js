@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
+const path = require('path');
 
 // Express Route
 const stationaryRoute = require('../backend/routes/stationary.route')
@@ -26,13 +27,13 @@ app.use(express.json());
 app.use(express.urlencoded({
   extended: true
 }));
-app.use(express.static('build'));
+//app.use(express.static('build'));
 app.use(cors());
 app.use('/stationary', stationaryRoute)
 
-app.get('*', (req,res) => {
-  res.sendFile(path.resolve(__dirname,'build', 'index.html'))
-})
+// app.get('*', (req,res) => {
+//   res.sendFile(path.resolve(__dirname,'build', 'index.html'))
+// })
 
 // PORT
 const port = process.env.PORT || 4000;
@@ -41,9 +42,9 @@ const server = app.listen(port, () => {
 })
 
 // 404 Error
-app.use((req, res, next) => {
-  next(createError(404));
-});
+// app.use((req, res, next) => {
+//   throw new Error('404');
+// });
 
 app.use(function (err, req, res, next) {
   console.error(err.message);

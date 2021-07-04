@@ -14,7 +14,7 @@ export default class StationaryList extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4000/stationary/')
+    axios.get('http://localhost:4000/stationary')
       .then(res => {
         this.setState({
           stationary: res.data

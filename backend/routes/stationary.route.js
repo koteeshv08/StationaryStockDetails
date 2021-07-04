@@ -18,7 +18,7 @@ router.route('/create-item').post((req, res, next) => {
 });
 
 // READ Stationary
-router.route('/stationary').get((req, res) => {
+router.route('/').get((req, res) => {
   stationarySchema.find((error, data) => {
     if (error) {
       return next(error)
