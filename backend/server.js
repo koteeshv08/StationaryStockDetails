@@ -1,16 +1,18 @@
-let express = require('express');
-let mongoose = require('mongoose');
-let cors = require('cors');
-let bodyParser = require('body-parser');
-let dbConfig = require('./database/db');
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+require('dotenv').config();
 
 // Express Route
-const studentRoute = require('../backend/routes/student.route')
+const stationaryRoute = require('../backend/routes/stationary.route')
 
 // Connecting mongoDB Database
 mongoose.Promise = global.Promise;
-mongoose.connect(dbConfig.db, {
-  useNewUrlParser: true
+mongoose.connect(process.env.DB_HOST, {
+      useCreateIndex: true,
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+      useFindAndModify: false,
 }).then(() => {
   console.log('Database sucessfully connected!')
 },
@@ -20,12 +22,13 @@ mongoose.connect(dbConfig.db, {
 )
 
 const app = express();
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
+app.use(express.json());
+app.use(express.urlencoded({
   extended: true
 }));
+app.use(express.static('build'));
 app.use(cors());
-app.use('/students', studentRoute)
+app.use('/stationary', stationaryRoute)
 
 
 // PORT

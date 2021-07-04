@@ -9,9 +9,9 @@ import "./App.css";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import CreateStudent from "./components/create-student.component";
-import EditStudent from "./components/edit-student.component";
-import StudentList from "./components/student-list.component";
+import CreateStationary from "./components/create-stationary.component";
+import EditStationary from "./components/edit-stationary.component";
+import StationaryList from "./components/stationary-list.component";
 
 function App() {
   return (<Router>
@@ -21,15 +21,15 @@ function App() {
           <Container>
 
             <Navbar.Brand>
-              <Link to={"/create-student"} className="nav-link">
+              <Link to={"/create-item"} className="nav-link">
                 React MERN Stack App
               </Link>
             </Navbar.Brand>
 
             <Nav className="justify-content-end">
               <Nav>
-                <Link to={"/create-student"} className="nav-link">
-                  Create Student
+                <Link to={"/create-item"} className="nav-link">
+                  Create Item
                 </Link>
               </Nav>
 
@@ -40,8 +40,8 @@ function App() {
               </Nav> */}
 
               <Nav>
-                <Link to={"/student-list"} className="nav-link">
-                  Student List
+                <Link to={"/stationary-list"} className="nav-link">
+                  Stationary List
                 </Link>
               </Nav>
             </Nav>
@@ -55,10 +55,10 @@ function App() {
           <Col md={12}>
             <div className="wrapper">
               <Switch>
-                <Route exact path='/' component={CreateStudent} />
-                <Route path="/create-student" component={CreateStudent} />
-                <Route path="/edit-student/:id" component={EditStudent} />
-                <Route path="/student-list" component={StudentList} />
+                <Route exact path='/' component={CreateStationary} />
+                <Route path="/create-item" component={CreateStationary} />
+                <Route path="/edit-item/:id" component={EditStationary} />
+                <Route path="/stationary-list" component={StationaryList} />
               </Switch>
             </div>
           </Col>
