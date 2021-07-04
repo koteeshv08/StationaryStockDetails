@@ -10,7 +10,7 @@ export default class CreateStationary extends Component {
 
     // Setting up functions
     this.onChangeStationaryName = this.onChangeStationaryName.bind(this);
-    this.onChangeStationaryImage = this.onChangeStationaryName.bind(this);
+    this.onChangeStationaryImage = this.onChangeStationaryImage.bind(this);
     this.onChangeStationaryDescription = this.onChangeStationaryDescription.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
@@ -61,12 +61,12 @@ export default class CreateStationary extends Component {
           <Form.Control type="text" value={this.state.name} onChange={this.onChangeStationaryName} />
         </Form.Group>
 
-        <Form.Group controlId="Email">
+        <Form.Group controlId="Image">
           <Form.Label>Image</Form.Label>
           <Form.Control type="text" value={this.state.image} onChange={this.onChangeStationaryImage} />
         </Form.Group>
 
-        <Form.Group controlId="Name">
+        <Form.Group controlId="Description">
           <Form.Label>Description</Form.Label>
           <Form.Control type="text" value={this.state.description} onChange={this.onChangeStationaryDescription} />
         </Form.Group>

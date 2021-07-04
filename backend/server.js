@@ -30,6 +30,9 @@ app.use(express.static('build'));
 app.use(cors());
 app.use('/stationary', stationaryRoute)
 
+app.get('*', (req,res) => {
+  res.sendFile(path.resolve(__dirname,'build', 'index.html'))
+})
 
 // PORT
 const port = process.env.PORT || 4000;

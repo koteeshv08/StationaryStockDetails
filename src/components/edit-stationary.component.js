@@ -56,7 +56,7 @@ export default class EditStationary extends Component {
       description: this.state.description
     };
 
-    axios.put('stationary/update-item/' + this.props.match.params.id, studentObject)
+    axios.put('stationary/update-item/' + this.props.match.params.id, stationaryObject)
       .then((res) => {
         console.log(res.data)
         console.log('Item successfully updated')
@@ -77,12 +77,12 @@ export default class EditStationary extends Component {
           <Form.Control type="text" value={this.state.name} onChange={this.onChangeStationaryName} />
         </Form.Group>
 
-        <Form.Group controlId="Email">
+        <Form.Group controlId="Image">
           <Form.Label>Image</Form.Label>
           <Form.Control type="text" value={this.state.image} onChange={this.onChangeStationaryImage} />
         </Form.Group>
 
-        <Form.Group controlId="Name">
+        <Form.Group controlId="Description">
           <Form.Label>Description</Form.Label>
           <Form.Control type="text" value={this.state.description} onChange={this.onChangeStationaryDescription} />
         </Form.Group>

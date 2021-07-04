@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import Table from 'react-bootstrap/Table';
-import StudentTableRow from './StationaryTableRow';
+import StationaryTableRow from './StationaryTableRow';
 
 
 export default class StationaryList extends Component {
